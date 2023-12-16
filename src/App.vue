@@ -1,6 +1,6 @@
 <template>
   <!-- Header -->
-  <AppHeader />
+  <Header />
 
   <!-- Introduction -->
   <section class="mb-8 py-20 text-white text-center relative">
@@ -265,19 +265,15 @@
       <div class="player-duration">03:06</div>
     </div>
   </div>
- <!-- AuthModal -->
- <AuthModal />
-
+  <!-- AuthModal -->
+  <Auth />
 </template>
 
 <script>
-import AppHeader from '@/components/AppHeader.vue'
-import AuthModal from '@/components/AuthModal.vue'
+import Header from '@/components/Header.vue'
+import Auth from '@/components/Auth.vue'
 export default {
   name: 'App',
-  data() {
-    return {}
-  },
-  components: { AppHeader, AuthModal }
+  components: { Header, Auth }
 }
 </script>

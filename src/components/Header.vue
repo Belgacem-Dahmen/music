@@ -1,5 +1,5 @@
 <template>
-    <!-- Header -->
+  <!-- Header -->
   <header id="header" class="bg-gray-700">
     <nav class="container mx-auto flex justify-start items-center py-5 px-4">
       <!-- App Name -->
@@ -10,7 +10,9 @@
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
           <li>
-            <a class="px-2 text-white" href="#">Login / Register</a>
+            <a class="px-2 text-white" href="#" @click.prevent="toogleAuthModal"
+              >Login / Register</a
+            >
           </li>
           <li>
             <a class="px-2 text-white" href="#">Manage</a>
@@ -22,17 +24,23 @@
 </template>
 
 <script>
-    
-    export default {
-        name:'AppHeader',
-        data () {
-            return {
-
-            }
-        }
+import { mapWritableState } from 'pinia'
+import useModalStore from '@/stores/modal'
+export default {
+  name: 'Header',
+  data() {
+    return {}
+  },
+  computed: {
+    ...mapWritableState(useModalStore, ['isOpen'])
+  },
+  methods: {
+    toogleAuthModal() {
+      this.isOpen = !this.isOpen
+      // console.log(this.isOpen)
     }
+  }
+}
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -1,8 +1,12 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useModalStore = defineStore('modal', () => {
-  const isOpen = ref(false)
-
-  return { isOpen }
+export default defineStore('modal', {
+  state: () => ({
+    isOpen: false
+  }),
+  getters: {
+    hiddenClass() {
+      return !this.isOpen ? 'hidden' : ''
+    }
+  }
 })
