@@ -1,5 +1,5 @@
 import { Form as VeeForm, Field as VeeField,defineRule,ErrorMessage } from "vee-validate"
-import {required, min_value,email,min,max,alpha_spaces as alphaSpaces, confirmed} from '@vee-validate/rules'
+import {required, min_value,email,min,max,alpha_spaces as alphaSpaces, confirmed,not_one_of as excluded} from '@vee-validate/rules'
 export default {
     install(app) {
         app.component("VeeForm", VeeForm);
@@ -12,6 +12,7 @@ export default {
         defineRule('alpha_spaces',alphaSpaces);
         defineRule('email',email);
         defineRule('min_value',min_value);
-        defineRule('confirmed',confirmed)
+        defineRule('confirmed',confirmed);
+        defineRule('excluded',excluded)
     }
 }
