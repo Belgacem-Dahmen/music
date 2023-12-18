@@ -13,6 +13,6 @@ export default {
         defineRule('email',email);
         defineRule('min_value',min_value);
         defineRule('confirmed',confirmed);
-        defineRule('excluded',excluded)
+        defineRule('excluded',excluded);
     }
 }
